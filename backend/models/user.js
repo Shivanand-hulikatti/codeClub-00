@@ -1,17 +1,53 @@
 const mongoose = require('mongoose');
 
-const userSchema = new mongoose.Schema({
-    cfHandle: {
-        type: String,
-        required: true
-    },
-    role: {
+const Schema = mongoose.Schema;
+
+const userSchema = new Schema({
+    usn: {
         type: String,
         required: true,
-        default: 'NORMAL'
+        unique: true,
+        trim: true,
+        minlength: 12,
+        maxlength: 12,
+        lowercase: true
     },
-},{
-    timestamps: true
+    cfHandle: {
+        type: String,
+        required: true,
+        unique: true,
+        trim: true,
+        lowercase: true
+    },
+    points: {
+        type: Number,
+        default: 0
+    },
+    numberOfQuestionsSolved: {
+        type: Number,
+        default: 0
+    }
+});
+
+const solvedProblemsSchema = new Schema({
+    userId: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+    },
+    problemIds: [{
+        contestId: {
+            type: Number,
+            required: true
+        },
+        problemIndex: {
+            type : String,
+            required: true
+        }
+    }]
 });
 
 const User = mongoose.model('User', userSchema);
+const SolvedProblems = mongoose.model('SolvedProblems', solvedProblemsSchema);
+
+module.exports = { User, SolvedProblems };
