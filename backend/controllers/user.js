@@ -1,8 +1,8 @@
 const { User } = require('../models/user');
 
 async function registerHandler(req, res) {
-    const cfHandle = req.params.cf;
-    const usn = req.body.usn;
+    const cfHandle = req.body.cfHandle;
+    const usn = req.body.usn;    
     if (!usn || !cfHandle) {
         return res.status(400).json({ message: 'USN and CF Handle are required' });
     }
@@ -23,8 +23,10 @@ async function registerHandler(req, res) {
 }
 
 async function loginHandler(req, res) {
-    const cfHandle = req.params.cf;
+    const cfHandle = req.body.cfHandle;
     const usn = req.body.usn;
+    console.log(cfHandle, usn);
+    
     if (!cfHandle && !usn) {
         return res.status(400).json({ message: 'CF Handle or USN is required' });
     }

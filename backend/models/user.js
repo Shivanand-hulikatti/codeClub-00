@@ -16,8 +16,7 @@ const userSchema = new Schema({
         type: String,
         required: true,
         unique: true,
-        trim: true,
-        lowercase: true
+        trim: true
     },
     points: {
         type: Number,
