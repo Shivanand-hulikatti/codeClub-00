@@ -15,7 +15,7 @@ async function registerHandler(req, res) {
             usn,
             cfHandle
         });
-        res.cookie('user', user, { httpOnly: true, secure: true });
+        res.cookie('user', user._id, { httpOnly: true, secure: true });
         return res.status(201).json(user);
     } catch (err) {
         return res.status(500).json({ message: 'Internal Server Error' });
@@ -41,7 +41,7 @@ async function loginHandler(req, res) {
                 return res.status(404).json({ message: 'User not found' });
             }
         }
-        res.cookie('user', user, { httpOnly: true, secure: true });
+        res.cookie('user', user._id, { httpOnly: true, secure: true });
         return res.status(200).json(user);
     } catch (err) {
         return res.status(500).json({ message: 'Internal Server Error' });
