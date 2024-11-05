@@ -33,6 +33,7 @@ const userSchema = new Schema({
     },
     role:{
         type: String,
+        enum: ['user','admin'],
         default: 'user'
     }
 },
@@ -40,8 +41,12 @@ const userSchema = new Schema({
     timestamps: true
 });
 
-const solvedProblemsSchema = new Schema({
+const questionSchema = new Schema({
     contestId: {
+        type: Number,
+        required: true,
+    },
+    dayNumber: {
         type: Number,
         required: true,
     },
@@ -61,6 +66,6 @@ const solvedProblemsSchema = new Schema({
 })
 
 const User = mongoose.model('User', userSchema);
-const SolvedProblems = mongoose.model('SolvedProblems', solvedProblemsSchema);
+const Question = mongoose.model('Question', questionSchema);
 
-module.exports = { User, SolvedProblems };
+module.exports = { User,Question};
