@@ -26,6 +26,11 @@ const userSchema = new Schema({
         type: Number,
         default: 0
     },
+    ratings: {
+        type: Number,
+        required: true,
+        default: 0,
+    },
     role:{
         type: String,
         default: 'user'
@@ -36,22 +41,24 @@ const userSchema = new Schema({
 });
 
 const solvedProblemsSchema = new Schema({
-    userId: {
-        type: Schema.Types.ObjectId,
-        ref: 'User',
-        required: true
+    contestId: {
+        type: Number,
+        required: true,
     },
-    problemIds: [{
-        contestId: {
-            type: Number,
-            required: true
-        },
-        problemIndex: {
-            type : String,
-            required: true
-        }
-    }]
-});
+    index: {
+        type: String,
+        required: true,
+    },
+    name: {
+        type: String,
+        required: true,
+    },
+    solvedBy : {
+        type: [mongoose.Schema.Types.ObjectId],
+        ref: 'User',
+        default : []
+    }
+})
 
 const User = mongoose.model('User', userSchema);
 const SolvedProblems = mongoose.model('SolvedProblems', solvedProblemsSchema);
