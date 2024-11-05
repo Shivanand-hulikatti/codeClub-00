@@ -1,4 +1,5 @@
 const { User } = require('../models/user');
+const axios = require('axios');
 
 async function registerHandler(req, res) {
     const cfHandle = req.body.cfHandle;
@@ -10,6 +11,10 @@ async function registerHandler(req, res) {
         const alreadyExist = await User.findOne({ usn, cfHandle });
         if (alreadyExist) {
             return res.status(400).json({ message: 'User already exists' });
+        }
+        const userExist = await axios.get(`https://codeforces.com/api/user.info?handles=${cfHandle}`);
+        if(userExist.data.status === 'FAILED') {
+            return res.status(400).json({ message: 'CF Handle does not exist' });
         }
         const user = await User.create({
             usn,
@@ -25,8 +30,6 @@ async function registerHandler(req, res) {
 async function loginHandler(req, res) {
     const cfHandle = req.body.cfHandle;
     const usn = req.body.usn;
-    console.log(cfHandle, usn);
-    
     if (!cfHandle && !usn) {
         return res.status(400).json({ message: 'CF Handle or USN is required' });
     }

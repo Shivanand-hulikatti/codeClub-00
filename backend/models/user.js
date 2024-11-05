@@ -25,7 +25,14 @@ const userSchema = new Schema({
     numberOfQuestionsSolved: {
         type: Number,
         default: 0
+    },
+    role:{
+        type: String,
+        default: 'user'
     }
+},
+{
+    timestamps: true
 });
 
 const solvedProblemsSchema = new Schema({
