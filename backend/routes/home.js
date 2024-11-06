@@ -6,8 +6,13 @@ const route = express.Router();
 route.use(cookieParser());
 
 route.get('/',verifyCookie,async (req,res)=>{
-
-    res.send('Welcome to the Home Page');
+    // here we will show the questions from the database and onclicking particular question we will take the user to codeforces question page of that perticular question
+    try{
+        const questions = await Question.find();
+        res.send(questions);
+    }catch(error){
+        res.status(500).send({ message: 'Internal Server Error', error: error.message });
+    }
 });
 
 route.post('/', verifyCookie, async (req, res) => {
