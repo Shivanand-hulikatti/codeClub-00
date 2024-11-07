@@ -3,9 +3,9 @@ import React from 'react';
 function NavBar() {
     return (
         <nav className="bg-gray-900 border-gray-700 fixed w-full z-20 top-0 left-0">
-            <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-                <a href="https://flowbite.com/" className="flex items-center space-x-3 rtl:space-x-reverse">
-                    <img src="https://flowbite.com/docs/images/logo.svg" className="h-8" alt="Flowbite Logo" />
+            <div className="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-4">
+                <a href="#" className="flex items-center space-x-3 rtl:space-x-reverse">
+                    <img src="https://flowbite.com/docs/images/logo.svg" className="h-8" alt="Code club logo" />
                     <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">Code Club</span>
                 </a>
                 <button data-collapse-toggle="navbar-default" type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-400 rounded-lg md:hidden hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
