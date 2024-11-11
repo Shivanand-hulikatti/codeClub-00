@@ -61,7 +61,7 @@ const LandingPage = () => {
               Question of the Day
             </h1>
             <p className="text-gray-400 text-lg md:text-xl font-light tracking-wide max-w-2xl">
-              ft. code club KLE Technological University Hub1
+              ft. code club KLE Technological University Hubli
             </p>
             <div className="flex flex-wrap justify-center md:justify-start gap-4 pt-4">
               <button className="px-8 py-4 bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 rounded-lg transition-all duration-200 font-medium tracking-wide shadow-lg hover:shadow-emerald-500/20">

@@ -1,11 +1,14 @@
+import { BrowserRouter, Routes,Route } from 'react-router-dom'
 import LandingPage from './pages/Landing'
 
 function App() {
 
   return (
-    <div className='bg-slate-950 w-full h-screen'>
-      <LandingPage />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
