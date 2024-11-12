@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { GithubIcon, TwitterIcon, LinkedinIcon, Menu, X } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const LandingPage = () => {
+  let navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -64,10 +66,10 @@ const LandingPage = () => {
               ft. code club KLE Technological University Hubli
             </p>
             <div className="flex flex-wrap justify-center md:justify-start gap-4 pt-4">
-              <button className="px-8 py-4 bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 rounded-lg transition-all duration-200 font-medium tracking-wide shadow-lg hover:shadow-emerald-500/20">
+              <button onClick={(e)=>navigate('/register')} className="px-8 py-4 bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 rounded-lg transition-all duration-200 font-medium tracking-wide shadow-lg hover:shadow-emerald-500/20">
                 Register Now
               </button>
-              <button className="px-8 py-4 bg-gray-800 hover:bg-gray-700 rounded-lg transition-all duration-200 font-medium tracking-wide shadow-lg hover:shadow-gray-700/20">
+              <button onClick={(e)=>navigate('/login')} className="px-8 py-4 bg-gray-800 hover:bg-gray-700 rounded-lg transition-all duration-200 font-medium tracking-wide shadow-lg hover:shadow-gray-700/20">
                 Login Now
               </button>
             </div>
