@@ -1,7 +1,9 @@
 
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
+  let navigate = useNavigate();
   const [usn, setUsn] = useState('');
   const [handle, setHandle] = useState('');
 
@@ -37,12 +39,13 @@ const Register = () => {
             required
           />
         </div>
+        <div className='text-slate-100 pb-3'>Already have an account ? <span className='underline  cursor-pointer' onClick={e=>navigate('/login')}>Login now</span></div>
         <button
-          type="submit"
-          className="w-full py-2 px-4 bg-emerald-500 text-gray-900 font-bold rounded hover:bg-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-500"
-        >
-          Register
-        </button>
+            type="submit"
+            className="w-full py-2 px-4 bg-emerald-500 text-gray-900 font-semibold rounded-md hover:bg-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2"
+          >
+            Register
+          </button>
       </form>
     </div>
   );
