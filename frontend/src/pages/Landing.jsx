@@ -12,13 +12,10 @@ const LandingPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-900 text-gray-100">
-      {/* Main Container */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Navigation Bar */}
         <nav className="py-6">
           <div className="flex items-center justify-between">
-            {/* Logo Section */}
             <div className="flex items-center space-x-4">
               <div className="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-500 to-emerald-700 flex items-center justify-center">
                 <span className="text-xl font-mono font-bold">C</span>
@@ -26,7 +23,6 @@ const LandingPage = () => {
               <span className="text-xl font-semibold tracking-tight">codeclub</span>
             </div>
 
-            {/* Desktop Menu */}
             <div className="hidden md:flex space-x-8">
               <a href="#qotd" className="text-gray-300 hover:text-white transition-colors duration-200 text-sm font-medium tracking-wider">QOTD</a>
               <a href="#about" className="text-gray-300 hover:text-white transition-colors duration-200 text-sm font-medium tracking-wider">ABOUT</a>

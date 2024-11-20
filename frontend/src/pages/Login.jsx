@@ -19,7 +19,6 @@ const Login = () => {
       usn,
       cfHandle,
     };
-    const user = await axios.post('http://localhost:5000/login', loginData);
   };
 
   return (
