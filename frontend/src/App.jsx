@@ -3,6 +3,7 @@ import LandingPage from './pages/Landing'
 import Register from './pages/Register'
 import Login from './pages/Login'
 import Home from './pages/Home'
+import Leaderboard from './pages/Leaderboard'
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/leaderboard" element={<Leaderboard />} />
       </Routes>
     </BrowserRouter>
   )
